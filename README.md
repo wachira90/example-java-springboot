@@ -25,3 +25,13 @@ OpenJDK 64-Bit Server VM Temurin-17.0.7+7 (build 17.0.7+7, mixed mode, sharing)
 >javac -version
 javac 17.0.7
 ```
+
+## Dockerfile
+
+```
+FROM openjdk:8-jre
+WORKDIR /app
+ADD app.jar /app
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
+```
