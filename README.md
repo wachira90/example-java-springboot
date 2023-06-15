@@ -28,6 +28,10 @@ javac 17.0.7
 
 ## Dockerfile
 
+### mv myapp-0.0.1-SNAPSHOT.jar app.jar
+
+### docker build -t wachira90/spring-boot:1.0 .
+
 ```
 FROM openjdk:8-jre
 WORKDIR /app
