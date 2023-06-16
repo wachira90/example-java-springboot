@@ -39,3 +39,44 @@ ADD app.jar /app
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
 ```
+
+## kubernet yaml
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-spring
+  namespace: develop
+  labels:
+    app: spring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring
+  template:
+    metadata:
+      labels:
+        app: spring
+    spec:
+      containers:
+      - name: spring
+        image: wachira90/spring-boot:1.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-spring
+  namespace: develop
+  labels:
+    app: spring
+spec:
+  type: NodePort
+  selector:
+    app: spring
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 31000
+```
