@@ -1,9 +1,15 @@
 # example-java-springboot
 example java springboot
 
+## build command
+
+```sh
+mvn clean install
+```
+
 ## run command
 
-```bat
+```sh
 java -jar myapp-0.0.1-SNAPSHOT.jar
 ```
 
@@ -11,6 +17,10 @@ java -jar myapp-0.0.1-SNAPSHOT.jar
 
 ```
 http://localhost:8080/
+
+http://localhost:8080/v3/api-docs
+
+http://localhost:8080/swagger-ui/
 ```
 
 
