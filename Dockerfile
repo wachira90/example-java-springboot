@@ -16,7 +16,8 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 # Stage 2: Create a lightweight runtime image
-FROM eclipse-temurin:17-jre-alpine
+# FROM eclipse-temurin:17-jre-alpine
+FROM public.ecr.aws/docker/library/eclipse-temurin:8-jre-alpine
 
 # Set working directory in the container
 WORKDIR /app
